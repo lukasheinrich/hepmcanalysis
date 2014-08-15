@@ -9,7 +9,7 @@ Installation
 
     git clone https://github.com/lukasheinrich/hepmcanalysis.git
     cd hepmcanalysis
-    python setup.py --install-dir=<prefix>
+    python setup.py install
 
 Usage
 ------------
