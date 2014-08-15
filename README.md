@@ -1,7 +1,7 @@
 hepmcanalysis
 =============
 
-simple python module to have easy HepMC event loops in python
+simple python module to have easy HepMC event loops in python. This is very light wrapper around [pyhepmc](https://pypi.python.org/pypi/pyhepmc).
 
 
 Installation
