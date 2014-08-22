@@ -6,7 +6,7 @@ Mainly provides wrapper of std::istream (expected input for HepMC swig methos)
 and python generator to loop events.
 """
 
-from setuptools import setup, Extension
+from distutils.core import setup, Extension
 #weird need to use distutils instead of setuptools... or not?
 #https://github.com/wnd-charm/wnd-charm/issues/11
 
