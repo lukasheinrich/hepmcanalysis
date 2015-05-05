@@ -46,3 +46,6 @@ A complete example looping events and printing them looks like this:
 
 	if __name__ == '__main__':
 	  main()
+
+example: 
+http://nbviewer.ipython.org/github/lukasheinrich/hepmcanalysis/blob/master/hepmczanalysis.ipynb
