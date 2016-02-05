@@ -6,6 +6,8 @@
  */
 %{
 #include "streamproxy.h" //include in _wrap.cxx
+#include "ostreamproxy.h" //include in _wrap.cxx
 %}
 
 %include "streamproxy.h"
+%include "ostreamproxy.h"

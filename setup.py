@@ -11,7 +11,7 @@ from distutils.core import setup, Extension
 #https://github.com/wnd-charm/wnd-charm/issues/11
 
 ## Extension definition
-ext = Extension('hepmcanalysis._streamproxy', ['hepmcanalysis/streamproxy.i'],swig_opts=['-c++'])
+ext = Extension('_streamproxy', ['hepmcanalysis/streamproxy.i'],swig_opts=['-c++'])
 
 
 ## Setup definition
