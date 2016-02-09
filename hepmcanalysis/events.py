@@ -1,4 +1,5 @@
 import hepmc
+from hepmcanalysis.streamproxy import stringstream_proxy
 from hepmcanalysis.streamproxy import ostringstream_proxy
 from hepmcanalysis.streamproxy import ifstream_proxy
 
@@ -17,10 +18,17 @@ def fromfile(filename):
     for e in events(g):
         yield e
 
+def fromstring(string):
+    proxy = stringstream_proxy()
+    proxy.write(string)
+    g = hepmc.IO_GenEvent(proxy.stream())
+    for e in events(g):
+        yield e
+
 def dumps(event):
     outproxy = ostringstream_proxy()
     outevent = hepmc.IO_GenEvent(outproxy.stream())
     outevent.write_event(event)
     del outevent
     output =  outproxy.str()
-    return '\n'.join(output.split('\n')[3:-2])    
+    return output
