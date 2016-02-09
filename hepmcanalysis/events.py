@@ -3,8 +3,6 @@ from hepmcanalysis.streamproxy import stringstream_proxy
 from hepmcanalysis.streamproxy import ostringstream_proxy
 from hepmcanalysis.streamproxy import ifstream_proxy
 
-
-
 def events(genevent):
   '''simple generator that exhausts the read_next_event of a GenEvent object'''
   ev = genevent.read_next_event()
@@ -25,10 +23,11 @@ def fromstring(string):
     for e in events(g):
         yield e
 
-def dumps(event):
+def dumps(events):
     outproxy = ostringstream_proxy()
     outevent = hepmc.IO_GenEvent(outproxy.stream())
-    outevent.write_event(event)
+    for e in events:
+        outevent.write_event(e)
     del outevent
     output =  outproxy.str()
     return output
